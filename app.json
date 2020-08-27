@@ -1,5 +1,5 @@
 {
-  "name": "rathens welcomer",
+  "name": "paradise welcome bot",
   "description": "A basic welcome bot",
   "keywords": [
     "node",
@@ -15,8 +15,8 @@
       "description": "Your Bots Prefix",
       "value": ""
     },
-  "website": "https://the-watchers.webnode.com/",
-  "repository": "https://github.com/GrimDesignsFiveM/Ninja-Bot-2.0",
+  "website": "https://paradisebots.net ",
+  "repository": "https://github.com/ParadiseBotList/ParadiseWelcomeBot",
   "logo": "https://cdn.discordapp.com/attachments/586095704057970708/587949134632321034/imageedit_1_8018298797.png",
   "success_url": "/welcome",
   ],
