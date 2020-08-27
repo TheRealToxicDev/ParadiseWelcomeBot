@@ -1,12 +1,3 @@
- /*
- * Code by Tyler. H#9393!!
- * Ninja Discord Modertion Bot v1.00
- *
- *  I DO NOT authorize you to use this bot or the corresponding code without my consent first violation in this term will result in a copyright strike or lawsuit
- *  If you fork this Bot repo make sure you give me credit for all files and folders associated as all the branding for this bot is registered and copy written. 
- *  Due to the fact that no license is provided with this bot that means that it falls under the not publicly available category.
-*/
-
 const Discord = require("discord.js");
 const zion = new Discord.Client();
 const timers = require('timers')
