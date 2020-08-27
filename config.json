@@ -1,6 +1,6 @@
 {
   "token": "",
-  "prefix": "z>",
+  "prefix": "pm>",
   "embed_emoji": "",
   "logchannel": "welcome-bot-logs",
   "welcome_channel": "greetings",
@@ -17,6 +17,6 @@
   "activitytime": "15000",
   "ownerID": "337174407040598016",
   "customtext": "Have a nice time.",
-  "embed_color": "363A3F",
+  "embed_color": "#7289DA",
   "embed_guildname": "Paradise Bot List | P.B.L"
 }
