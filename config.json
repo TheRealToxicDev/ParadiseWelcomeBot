@@ -1,0 +1,22 @@
+{
+  "token": "",
+  "prefix": "z>",
+  "embed_emoji": "",
+  "logchannel": "welcome-bot-logs",
+  "welcome_channel": "greetings",
+  "leave_channel": "greetings",
+  "activity1": "Paradise Bot List",
+  "type1": "STREAMING",
+  "url": "https://www.twitch.tv/monstercat",
+  "activity2": "Welcoming New Members",
+  "type2": "STREAMING",
+  "url": "https://www.twitch.tv/monstercat",
+  "activity3": "Official & Private Bot",
+  "type3": "STREAMING",
+  "url": "https://www.twitch.tv/monstercat",
+  "activitytime": "15000",
+  "ownerID": "337174407040598016",
+  "customtext": "Have a nice time.",
+  "embed_color": "363A3F",
+  "embed_guildname": "Paradise Bot List | P.B.L"
+}
