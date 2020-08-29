@@ -173,7 +173,7 @@ zion.on('guildMemberAdd', member => {
       };
       const guildspot = guildconfig || member.guild
       const emojispot = ` ` || `${emojiID}`
-      let rules = member.guild.channels.find("id", "727716221268787290")
+      let rules = member.guild.channels.find("id", "748977820784394244")
       let str = `Welcome to **${guildspot}**! <@${member.user.id}>!, Make sure you read the ${rules} channel :thumbsup: and enjoy your stay`
       const embed = new Discord.RichEmbed()
       .setTitle("Member Joined :thinking:")
@@ -209,7 +209,7 @@ zion.on('guildMemberRemove', member => {
       .setTitle("Member Left :shrug:")
       .setColor(ecolor)
       .setDescription(str)
-      .setURL("https://discord.gg/tEkJP2b")
+      .setURL("https://discord.gg/u45VhbZ")
       .addField("User Tag", `${member.user.tag}`, true)
       .addField("User ID", `${member.user.id}`, true)
       .addField("We Now Have", `${suffixed} Members`, true)
