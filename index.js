@@ -28,7 +28,7 @@ const moment = require('moment');
 add   "token": "Your_Token",                       /
       "prefix": "Your_Prefix",                     /
 in the config.json */                              
-const prefix = process.env.PREFIX;                   
+const prefix = "z>";                   
 const token = process.env.BOT_TOKEN;               
 ////////////////////////////////////////////////////
 
