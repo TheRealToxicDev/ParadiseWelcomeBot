@@ -165,7 +165,7 @@ zion.on('guildMemberAdd', member => {
   let count = member.guild.memberCount.toString() 
   let end = count[count.length-1]
   let suffixed = end == 1 ? count + "st" : end == 2 ? count + "nd" : end == 3 ? count + "rd" : count + "th" 
-  const channel = member.guild.channels.find(chnl => chnl.name === "greetings");
+  const channel = member.guild.channels.find(chnl => chnl.name === "┊greetings");
   const memberavatar = member.user.displayAvatarURL
      if (!channel) {
         console.log("Set channel name in config.");
@@ -196,7 +196,7 @@ zion.on('guildMemberRemove', member => {
   let count = member.guild.memberCount.toString() 
   let end = count[count.length-1]
   let suffixed = end == 1 ? count + "st" : end == 2 ? count + "nd" : end == 3 ? count + "rd" : count
-  const channel = member.guild.channels.find(chnl => chnl.name === "greetings");
+  const channel = member.guild.channels.find(chnl => chnl.name === "┊greetings");
   const memberavatar = member.user.displayAvatarURL
      if (!channel) {
         console.log("Set channel name in config.");
