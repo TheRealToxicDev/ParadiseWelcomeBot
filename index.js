@@ -131,7 +131,7 @@ zion.on('guildMemberAdd', member => {
   console.log('User' + member.user.tag + 'has joined the server!');
  
   const role = member.guild.roles.find('name', 'Members');
-  const role2 = member.guild.roles.find("name", "Unapproved Bots")
+  const role2 = member.guild.roles.find("name", "Bots in Queue")
   if(member.user.bot) { 
   return member.addRole(role2)
   }
@@ -165,7 +165,7 @@ zion.on('guildMemberAdd', member => {
   let count = member.guild.memberCount.toString() 
   let end = count[count.length-1]
   let suffixed = end == 1 ? count + "st" : end == 2 ? count + "nd" : end == 3 ? count + "rd" : count + "th" 
-  const channel = member.guild.channels.find(chnl => chnl.name === `${welcome_channel}`);
+  const channel = member.guild.channels.find(chnl => chnl.name === "greetings");
   const memberavatar = member.user.displayAvatarURL
      if (!channel) {
         console.log("Set channel name in config.");
@@ -196,7 +196,7 @@ zion.on('guildMemberRemove', member => {
   let count = member.guild.memberCount.toString() 
   let end = count[count.length-1]
   let suffixed = end == 1 ? count + "st" : end == 2 ? count + "nd" : end == 3 ? count + "rd" : count
-  const channel = member.guild.channels.find(chnl => chnl.name === `${leave_channel}`);
+  const channel = member.guild.channels.find(chnl => chnl.name === "greetings");
   const memberavatar = member.user.displayAvatarURL
      if (!channel) {
         console.log("Set channel name in config.");
