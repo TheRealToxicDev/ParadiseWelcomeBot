@@ -64,68 +64,54 @@ let i = 0;
     }, time1)
   });
 
-// Initialize the invite cache
-/*const invites = {};
+
+/* INITIALIZE A CACHE TO HOUSE THE INVITES */
+
+const invites = {};
+
 const wait = require('util').promisify(setTimeout);
-  wait(1000); 
+wait(1000);
 
-//////////////////////////////***SERVER INVITES CACHE FEATURE***////////////////////////////////////////////////
-/* This event is required for loading all invites for all guilds and saving them to the cache. */
-	
-  /*zion.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });*/
-// });
-
-//////////////////////////////***MEMBER JOINED INVITE LOG***////////////////////////////////////////////////
-/* This event logs what invte code was used when a member joins the server */
-//zion.on('guildMemberAdd', member => {
-  // To compare, we need to load the current invite list.
-  //member.guild.fetchInvites().then(guildInvites => {
-    // This is the *existing* invites for the guild.
-    //const ei = invites[member.guild.id];
-    // Update the cached invites for the guild.
-   // invites[member.guild.id] = guildInvites;
-    // Look through the invites, find the one for which the uses went up.
-    //const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    // This is just to simplify the message being sent below (inviter doesn't have a tag property)
-    //const inviter = zion.users.get(invite.inviter.id);
-    // Get the log channel (change to your liking)
-   // const logChannel = member.guild.channels.find(channel => channel.name === "invite-logs");
-    // A real basic message with the information we need. 
- /*let iEmbed = new Discord.RichEmbed()
-   .setTitle("Paradise Invite Logs", zion.user.avatarURL)
-   .setDescription(`<@${member.user.id}> Has joined our Server!!`)
-   .addField("Member Tag", `${member.user.tag}`, true)
-   .addField("Invite Code", `https://www.discord.gg/${invite.code}`, true)
-   .addField("Invited By", `<@${inviter.id}>`, true)
-   .addField("Code Used ", `${invite.uses} times since its creation.`, true)
-   .setFooter("© Zion");
-   logChannel.send(iEmbed);
+zion.guilds.forEach(g => {
+  g.fetchInvites().then(guildInvites => {
+    invites[g.id] = guildInvites;
   });
- });*/
+});
 
-/*const serverStats = {
-  guildID: '603841199488368660',
-  totalUsersID: '615877512626700309',
-  memberCountID: '615877517269663774',
-  botCountID: '615877519303901190'
-}
- 
 zion.on('guildMemberAdd', member => {
-  if (member.guild.id !== serverStats.guildID) return;
-  zion.channels.get(serverStats.totalUsersID).setName(`Total: ${member.guild.memberCount}`);
-  zion.channels.get(serverStats.memberCountID).setName(`Users: ${member.guild.members.filter(m => !m.user.bot).size}`);
-  zion.channels.get(serverStats.botCountID).setName(`Bots: ${member.guild.members.filter(m => m.user.bot).size}`);
- 
-  var userGot = new Discord.RichEmbed()
-    .setColor(0x555555)
-    .setDescription("User got")
-    .setTitle(member.tag);
-  
-});*/
+
+/* TO COMPARE WE LOAD THE CURRENT INVITE LIST */
+  member.guild.fetchInvites().then(guildInvites => {
+
+    /* EXISTING INVITES FOR THE GUILD */
+    const ei = invites[member.guild.id];
+
+    /* UPDATE THE GUILDS CACHED INVITES */
+    invites[member.guild.id] = guildInvites;
+
+    /* SEARCH THE INVITES FOR THE ONE WHICH THE USE WENT UP */
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    
+    /* SIMPLIFY THE MESSAGE BEING SENT BELOW (INVITER DOESNT HAVE A TAG PROPERTY) */
+    const inviter = zion.users.get(invite.inviter.id);
+
+    /* THIS IS THE LOG CHANNEL WE WANT TO SEND THE INVITE LOGS TO */
+    const logChannel = member.guild.channels.find(c => c.name === 'invite-logs');
+
+    /* EMBED START */
+    let logEmbed = new Discord.RichEmbed()
+        logEmbed.setTitle('Paradise Invite Logs')
+        logEmbed.setDescription(`<@${member.user.id}> Has joined using the code below`)
+        logEmbed.addField('Member Tag', `${member.user.tag}`, true)
+        logEmbed.addField('Invite Code', `https://discord.gg/${invite.code}`, true)
+        logEmbed.addField('Invited By', `<@${inviter.id}>`, true)
+        logEmbed.addField('Code Used', `${invite.uses}`, true)
+        logEmbed.setFooter('© Zion | Paradise Bots LLC')
+
+        logChannel.send(logEmbed);
+  });
+});
+
 
 zion.on('guildMemberAdd', member => {
   console.log('User' + member.user.tag + 'has joined the server!');
