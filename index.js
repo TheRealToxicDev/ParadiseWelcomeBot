@@ -105,7 +105,7 @@ zion.on('guildMemberAdd', member => {
         logEmbed.addField('Member Tag', `${member.user.tag}`, true)
         logEmbed.addField('Invite Code', `https://discord.gg/${invite.code}`, true)
         logEmbed.addField('Invited By', `<@${inviter.id}>`, true)
-        logEmbed.addField('Code Used', `${invite.uses}`, true)
+        logEmbed.addField('Code Used', `${invite.uses} Times since its creation.`, true)
         logEmbed.setFooter('© Zion | Paradise Bots LLC')
 
         logChannel.send(logEmbed);
